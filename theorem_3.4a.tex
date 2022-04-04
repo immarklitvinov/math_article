@@ -1,0 +1,16 @@
+\begin{suggestion} \label{3.4a}
+Функция $F(Z)$ из теоремы \ref{3.3} непрерывна:
+\begin{equation}
+\displaystyle \lim_{n\to\infty}\max_{Z\in{}ABC}{{|F(Z) - F(u_n(Z))|}} = 0.
+\end{equation}
+\end{suggestion}
+
+
+
+\begin{proof}
+Для начала докажем следующий факт: $$\displaystyle \lim_{n\to\infty}\max_{Z\in{}ABC}{{|F(u_n(Z)) - f_n(u_n(Z))|}} = 0$$
+Зафиксируем $\varepsilon_0 > 0$. Тогда по определению функции $F(Z) : \exists n_0 \in \mathbb{N}: \forall n > n_0 : \forall Z \in ABC: |F(Z) - f_n(u_n(Z))| < \varepsilon_0$. Поскольку этот факт верен для любой точки $Z$ и ближайшей к ней середине $n$-замощения $u_n(Z)$, то в частности можно выбрать в роли $Z$ саму точку $u_n(Z)$.
+\\ \\
+Теперь докажем теорему.
+Зафиксируем $\varepsilon_0 > 0$. Тогда по определению функции $F(Z)$ и вышедоказанному утверждению $\exists n_0 \in \mathbb{N}: \forall n > n_0 : \forall Z \in ABC: |F(Z) - F(u_n(Z))| \leq |F(Z) - f_n(u_n(Z))| + |F(u_n(Z)) - f_n(u_n(Z))| \leq \frac{\varepsilon_0}{2} + \frac{\varepsilon_0}{2} = \varepsilon_0$.
+\end{proof}

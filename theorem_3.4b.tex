@@ -1,0 +1,28 @@
+\begin{suggestion} \label{3.4b}
+Для любого правильного треугольника $PQR$, гомотетичного $ABC$ и лежащего строго внутри $ABC$, и функции $F(Z)$ из теоремы \ref{3.3} выполнено:
+\begin{equation}
+\lim_{n\to\infty} \sum\limits_{j=1}^{l_n} F\left(\frac{w_{j+1,n}+w_{j,n}}{2}\right) (w_{j+1,n}-w_{j,n})=0,
+\end{equation}
+где $w_{1,n},w_{2,n},\dots,w_{l_n,n}$ --- центры шестиугольников $n$-го замощения, пересекающих контур треугольника $PQR$, занумерованных в порядке обхода этого контура против часовой стрелки.
+\end{suggestion}
+
+
+
+\begin{proof}[Доказательство теоремы \ref{3.4b}] 
+Докажем, что:
+$$\forall \varepsilon > 0 \space \exists \space n_0 : \forall n > n_0 \left|\sum_{j=1}^{l_n} F \left( \frac{w_{j+1} + w_j}{2} \right) ({w_{j+1} - w_j}) \right| < \varepsilon$$
+По определению функции $F(z)$:
+$$\forall \varepsilon > 0 \space \exists \space n_0 : \forall n > n_0 \left| F(Z) - f_n(u_n(Z)) \right| < \varepsilon$$
+Мы уже знаем, что по предложению \ref{3.1b}:
+$$\sum_{j=1}^{l_n} f_n \left( \frac{w_{j+1} + w_j}{2} \right) ({w_{j+1} - w_j}) = 0$$
+Вычтем это из подмодульного выражения:
+$$\left|\sum_{j=1}^{l_n} \left( F \left( \frac{w_{j+1} + w_j}{2} \right) - f_n \left( \frac{w_{j+1} + w_j}{2} \right) \right) ({w_{j+1} - w_j}) \right|$$
+По неравенству треугольника мы можем оценить это сверху, как:
+$$
+\sum_{j=1}^{l_n} \left| F \left( \frac{w_{j+1} + w_j}{2} \right) - f_n \left( \frac{w_{j+1} + w_j}{2} \right) \right| \left| ({w_{j+1} - w_j}) \right|    
+$$
+$|w_{j+1} - w_j| = \frac{\sqrt{3}}{n}$, поскольку сторона шестиугольников $\frac{1}{n}$. По выбору $n$ мы получаем, что: 
+$$\left| F \left( \frac{w_{j+1} + w_j}{2} \right) - f_n \left( \frac{w_{j+1} + w_j}{2} \right) \right| < \varepsilon$$
+Значит мы можем оценить нашу сумму сверху, как $l_n\varepsilon\frac{\sqrt{3}}{n}$.
+Заметим, что для любых двух соседних шестиугольников участок границы $PQR$ находящийся внутри них $\geq \frac{1}{n}$. Пусть длина границы $PQR$ - $a$. Тогда $\frac{l_n}{2n} \leq a$, иначе получилось бы, что граница $PQR$ внутри шестиугольников больше длины границы $PQR$. А значит $\frac{l_n}{n} \leq 2a$, следовательно $l_n\varepsilon\frac{\sqrt{3}}{n} \leq 2\sqrt{3}\varepsilon a$, что бывает сколь угодно малым при правильном выборе $\varepsilon$.  
+\end{proof}
